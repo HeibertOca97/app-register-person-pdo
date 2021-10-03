@@ -17,8 +17,10 @@ class Connection{
             $this->pdo = new PDO("mysql:dbname=".$this->database.";host=".$this->host, $this->username, $this->password, $this->options);
         } catch (\PDOException $pde) {
             print "PDOException: " . $pde->getMessage();
+            exit();
         } catch (\Throwable $th) {
             print "Throwable: " . $th->getMessage();
+            exit();
         }
     }
 
